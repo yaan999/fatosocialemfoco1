@@ -1,0 +1,314 @@
+/* --- Importação de Fontes do Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Poppins:wght@300;400;600;700&display=swap');
+
+/* --- Variáveis CSS para Cores (facilita a manutenção) --- */
+:root {
+    --primary-color: #000000; /* Azul índigo para destaque */
+    --secondary-color: #607d8b; /* Azul cinza para texto secundário */
+    --text-dark: #212121;
+    --text-light: #424242;
+    --bg-light: #fdfdfd;
+    --bg-dark-accent: #eceff1; /* Um cinza bem claro */
+    --border-color: #e0e0e0;
+}
+
+/* --- Estilos Gerais --- */
+body {
+    font-family: 'Merriweather', serif; /* Fonte para o corpo do texto, elegante e legível */
+    line-height: 1.7;
+    color: var(--text-light);
+    background-color: var(--bg-light);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased; /* Melhorar renderização de fontes */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 900px; /* Um pouco mais largo para melhor leitura */
+    margin: 40px auto;
+    padding: 0 25px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif; /* Fonte moderna e limpa para títulos */
+    color: var(--text-dark);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* --- Cabeçalho e Navegação --- */
+.site-header {
+    text-align: center;
+    padding: 40px 0 20px 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 40px;
+    background-color: #fff; /* Fundo branco para o cabeçalho */
+}
+
+.site-header h1 {
+    font-size: 3em;
+    margin: 0;
+    color: var(--primary-color);
+    letter-spacing: -1px; /* Ajuste sutil */
+}
+
+.site-header h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.site-header p {
+    font-size: 1.2em;
+    color: var(--secondary-color);
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+nav a::after { /* Efeito de linha embaixo ao passar o mouse */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease-out;
+}
+
+nav a:hover::after,
+nav a.active::after { /* 'active' para a página atual */
+    width: 100%;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Conteúdo Principal (Listagem de Artigos) --- */
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color); /* Linha de destaque */
+}
+
+.article-list {
+    display: grid; /* Usando CSS Grid para layout flexível */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas responsivas */
+    gap: 30px;
+}
+
+.article-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.article-card:hover {
+    transform: translateY(-5px); /* Efeito de elevação */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.article-card-content {
+    padding: 25px;
+}
+
+.article-card h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.article-card a {
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: color 0.3s ease;
+}
+
+.article-card a:hover {
+    color: var(--primary-color);
+}
+
+.article-meta {
+    font-size: 0.9em;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+.article-summary {
+    font-size: 1em;
+    color: var(--text-light);
+}
+
+/* --- Estilos da Página de Artigo --- */
+.article-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.article-header h2 {
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.article-info {
+    font-size: 1em;
+    color: var(--secondary-color);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+.article-content {
+    max-width: 700px; /* Conteúdo mais estreito para melhor legibilidade de blocos de texto */
+    margin: 0 auto;
+}
+
+.article-content p {
+    font-size: 1.1em;
+    margin-bottom: 1.8em;
+    line-height: 1.8;
+}
+
+.article-content h3 {
+    font-size: 1.8em;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    color: var(--text-dark);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+.article-content blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding: 15px 25px;
+    margin: 30px 0;
+    background-color: var(--bg-dark-accent);
+    color: var(--text-dark);
+    font-style: italic;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* --- Referências --- */
+.references-list {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.references-list p {
+    margin-bottom: 1.5em;
+    text-indent: -2.5em; /* Indentação francesa mais pronunciada */
+    padding-left: 2.5em;
+}
+
+/* --- Rodapé --- */
+.site-footer {
+    text-align: center;
+    margin-top: 80px;
+    padding: 30px 0;
+    border-top: 1px solid var(--border-color);
+    color: var(--secondary-color);
+    font-size: 0.9em;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+}
+
+/* --- Responsividade (para telas menores) --- */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    .site-header h1 {
+        font-size: 2.2em;
+    }
+
+    .site-header p {
+        font-size: 1em;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    .section-title {
+        font-size: 1.8em;
+    }
+
+    .article-header h2 {
+        font-size: 2em;
+    }
+
+    .article-content p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        text-align: left;
+    }
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+/* --- Estilos para Imagens nos Artigos --- */
+.article-content img {
+    max-width: 50%; /* Faz a imagem ser responsiva */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Facilita a centralização */
+    margin: 100px auto; /* Adiciona espaço vertical e centraliza horizontalmente */
+    border-radius: 8px; /* Bordas arredondadas sutis */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* --- Estilos para Legendas --- */
+.article-content figure {
+    margin: 40px auto; /* O margin vai na tag figure agora */
+    max-width: 100%;
+}
+
+.article-content figure img {
+    margin: 0; /* Remove a margem da imagem dentro da figure */
+}
+
+.article-content figcaption {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #607d8b; /* Usa nossa cor secundária */
+    font-style: italic;
+}
